@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{amssymb, amsmath}
+\usepackage[usenames]{color}
+\title{Matemáticas para las Ciencias Aplicadas \\ Tarea 1}
+\date{}
+\author{Fernando \\ Leo}
+\begin{document}
+\maketitle
+\section{\large Un cohete}
+Un cohete es disparado verticalmente hacia arriba y el combustible que lo impulsa se quema durante 60 segundos. Se sabe que, a los $h$ s de haber iniciado su desplazamiento, la altura $h$ (en metros) a la que se encuentra el cohete es: \[h(t) = 40 t^2 \; m\]
+\begin{enumerate}
+\item ¿A qué altura se halla el cohete cuando se le agota el combustible?
+  \begin{align*}
+    h(t)= 40t^2 \; \text{m} \hspace{5.1cm}    h(t)&=40(60)^2 \; m\\
+t=60\text{s} \hspace{7cm}    &=40(3600) \; m\\
+    &=144,000 \; m\\
+  \end{align*}
+  {\bf R:} 144,000 m es la altura cuando se agota el combustible.
+\item ¿Cuál es la rapidez promedio del cohete durante los primeros 60 s de su vuelo?
+  \begin{align*}
+    &\text{Rapidez promedio}=\frac{d}{t} \hspace{3cm}\frac{144,000}{60}= 2400 \frac{m}{s}\\
+    &t = 60\; \text{s} \\
+    &d = 40t^2 \; \text{m} 
+  \end{align*}
+  {\bf R:} $2,400 \frac{m}{s}$ es la rapidez promedio.
+\item Haga una tabla con tres columnas: una para el tiempo $t$ (donde $t = 0, 10, 20, . . . , 60 $s); otra para la posición $h(t)$; y una tercera para el incremento $\Delta h$ entre un valor de $t$ y el siguiente. Con base en ella, calcule la rapidez promedio del cohete para cada lapso de 10 s desde $t = 0$ hasta $t = 60$.
+  \begin{table}[h]
+\begin{center}
+\begin{tabular}{| c | c | c |c|}\hline
+  $\Delta t$ s & $h(t)$ m & $\Delta h$ m&$\frac{h(t)}{t}\frac{m}{s}$\\ \hline
+0 & 0 & 0 &0 \\ 
+10& 4000& 4000& 4000 \\
+20&16,000&12,000&800\\
+30&36,000&20,000&1,200\\
+40&64,000&28,000&1,600\\
+50&100,000&36.000&2,000\\
+60& 144,000& 44,000& 2,400 \\ \hline
+\end{tabular}
+\caption{Rapidez promedio de intervalos $\Delta t$}
+\label{tab:rapprom}
+\end{center}
+\end{table}
+
+\item Haga ahora otra tabla en la que muestre el cálculo de la rapidez promedio del cohete $\Delta t$ s antes y $\Delta t$ s después de $t = 3$ s, para los siguientes valores de $\Delta t$:\[1,\frac{1}{10},\frac{1}{10^2},\frac{1}{10^3},\frac{1}{10^4},\frac{1}{10^5}.\]
+\begin{table}[h]
+\begin{center}
+\begin{minipage}{0.45\linewidth}
+\centering
+\begin{tabular}{| c | c | c |}\hline
+  $\Delta t+3$  & $h(t)$  &$\frac{h}{t}$\\ \hline
+4&640&160 \\
+3.1&384.4&124\\
+3.01&362.404&120.4\\
+3.001&360.24004&120.04\\
+3.0001&360.0240004&120.004\\
+3.00001&360.0024&120.0004 \\ \hline
+\end{tabular}
+\caption{Rapidez promedio de intervalos $\Delta t$}
+\label{tab:rapprom+3}
+\end{minipage}%
+\hspace{0.05\linewidth} % Espacio entre tablas
+\begin{minipage}{0.45\linewidth}
+  \centering
+  \begin{tabular}{| c | c | c |}\hline
+  $3 - \Delta t$  & $h(t)$  &$\frac{h}{t}$\\ \hline
+2&160&80 \\
+2.9&384.4&124\\
+2.99&362.404&120.4\\
+2.999&360.24004&120.04\\
+2.9999&360.0240004&120.004\\
+2.99999&360.0024&120.0004 \\ \hline
+\end{tabular}
+\caption{Rapidez promedio de intervalos $\Delta t$}
+\label{tab:rapprom-3}
+\end{minipage}
+\end{center}
+\end{table}
+
+
+\item Es razonable suponer que la rapidez instantánea del cohete exactamente a los $t = 3$ s, tomará un valor intermedio entre la rapidez promedio $\Delta t$ s antes y $\Delta t$ s después de $t = 3$. Si esto es cierto, según sus cálculos, ¿cuánto vale esa rapidez instantánea?
+\item Si la función $y = y(t)$ describe la posición de un objeto que se mueve con un solo grado de libertad, entonces la velocidad instantánea del móvil, $v = v(t)$, en cualquier instante $t$ de su desplazamiento se define como:
+  \begin{equation}
+    v(t) = \lim_{\Delta t \rightarrow \infty}\frac{y(t - \Delta t) - y(t)}{\Delta t}
+  \end{equation}
+  
+\end{enumerate}
+\end{document}
