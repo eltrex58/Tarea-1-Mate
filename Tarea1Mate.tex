@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage[spanish, es-tabla]{babel}
 \usepackage{amssymb, amsmath}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \title{Matemáticas para las Ciencias Aplicadas \\ Tarea 1}
@@ -63,14 +64,10 @@ t=60\text{s} \hspace{7cm}    &=40(3600) \; m\\
 %Punto 4 del ejercicio 1
 \item Haga ahora otra tabla en la que muestre el cálculo de la rapidez promedio del cohete $\Delta t$ s antes y $\Delta t$ s después de $t = 3$ s, para los siguientes valores de $\Delta t$:\[1,\frac{1}{10},\frac{1}{10^2},\frac{1}{10^3},\frac{1}{10^4},\frac{1}{10^5}.\]
   
-    \begin{table}[h]
-  
+    \begin{table}[H]
         \begin{center}
-  
             \begin{minipage}{0.45\linewidth}
-  
             \centering
-  
                 \begin{tabular}{| c | c | c |}\hline %Tabla 2
                   $\Delta t+3$  & $h(t)$  &$\frac{h}{t}$\\ \hline
                     4&640&160 \\
@@ -80,19 +77,12 @@ t=60\text{s} \hspace{7cm}    &=40(3600) \; m\\
                     3.0001&360.0240004&120.004\\
                     3.00001&360.0024&120.0004 \\ \hline
                 \end{tabular}
-            
             \caption{Rapidez promedio de intervalos $\Delta t + 3$}
-
             \label{tab:rapprom+3}
-
             \end{minipage}
-
             \hspace{0.05\linewidth} 
-
             \begin{minipage}{0.45\linewidth}
-
             \centering
-
             \begin{tabular}{| c | c | c |}\hline %Tabla 3
                 $3 - \Delta t$  & $h(t)$  &$\frac{h}{t}$\\ \hline
                 2&160&80 \\
@@ -102,16 +92,12 @@ t=60\text{s} \hspace{7cm}    &=40(3600) \; m\\
                 2.9999&359.9760004&119.996\\
                 2.99999&359.9760004&119.9924\\ \hline
             \end{tabular}
-
             \caption{Rapidez promedio de intervalos $3 - \Delta t$}
-
             \label{tab:rapprom-3}
-
             \end{minipage}
-
         \end{center}
-
     \end{table}
+    
 
 %Punto 5 del ejercicio 1
 \item Es razonable suponer que la rapidez instantánea del cohete exactamente a los $t = 3$ s, tomará un valor intermedio entre la rapidez promedio $\Delta t$ s antes y $\Delta t$ s después de $t = 3$. Si esto es cierto, según sus cálculos, ¿cuánto vale esa rapidez instantánea?\\
@@ -180,7 +166,7 @@ La versión en español de la misma enciclopedia informa que la altura de la pir
   
         \end{enumerate}
   
-        \includegraphics[width=0.5\textwidth, center]{piramide1.png}
+        \includegraphics[width=0.5\textwidth, center]{piramide5.png}
   
         \[V_j = \Delta h \hspace{4.4pt}(l_j)^2\]
 
@@ -188,51 +174,87 @@ La versión en español de la misma enciclopedia informa que la altura de la pir
     \item Adapte el argumento que sugiere la siguiente figura (para el cálculo del volumen de un cono) al caso de la pirámide y aplíquelo para calcular los volúmenes $V_j$ de los prismas inscritos y circunscritos. 
  
         \includegraphics[width=0.5\textwidth, center]{cono.png} \\
-
-        \begin{minipage}{0.4\textwidth}
-            \raggedright
-            \includegraphics[width=\textwidth]{piramide2.png}
-        \end{minipage}%
-  
-        \hfill
-  
-        \begin{minipage}{0.55\textwidth}
-  
+        
+        Teniendo el argumento, con la formula de calcular de un volumen j-ésimo y los siguientes datos:
+    
             \begin{align*}
+                V_j &= \Delta h(l_j)^2 \\
                 \Delta h &= \frac{h}{50}\\
                 P &= \left\{ \frac{0h}{50}, \frac{1h}{50}, \frac{2h}{50}, \frac{3h}{50}, \frac{4h}{50}, \dots,\frac{50h}{50} \right\}\\
                 P &= \{ h_0, h_1, h_2, h_3, h_4, \dots, h_{50} \}\\
-                h_j &= j \Delta h, \quad j = 1, 2, 3, 4, \dots, 50
+                h_j &= j \Delta h, \quad j = 1, 2, 3, 4, \dots, 50\\
             \end{align*}
-  
+            
+        Primero tendríamos que obtener el valor de $l_j$. Por lo tanto, teniendo dos primas uno con base $l_0$ (siendo este el valor de la base de la pirámide) y otro con base $l_j$, si trazamos dos triángulos semejantes sobre las bases se puede obtener el valor de $ l_j$ de la siguiente forma:
+        
+        
+        \begin{minipage}[H]{0.45\textwidth}
+            \raggedleft
+            \includegraphics[width=\textwidth, center]{piramide2.png}
         \end{minipage}
-  
-        Por semejanza de triángulos tenemos:
-  
+        \hfill
+        \begin{minipage}[H]{0.45\textwidth}
+            \begin{align*}
+                \frac{\frac{l_0}{2}}{h} &= \frac{\frac{l_j}{2}}{h - h_j}\\
+                \frac{l_0}{2h} &= \frac{l_j}{2(h - h_j)}\\
+                \frac{l_0 \cdot 2(h - h_j)}{2h} &= l_j\\
+                \frac{l_0 \cdot (h - h_j)}{50h} &= l_j
+            \end{align*}
+        \end{minipage}
+        
+        Y sustituyendo el valor $l_j$ en la fórmula del volumen
+    
         \begin{align*}
-            \frac{\frac{l_0}{2}}{h} &= \frac{\frac{l_j}{2}}{h - h_j} &\quad V_j &= \Delta h \left( \frac{l_0 \cdot (h - h_j)}{h} \right)^2\\
-            \frac{l_0}{2h} &= \frac{l_j}{2(h - h_j)}&\quad V_j &=   \frac{h \cdot l_0^2 \cdot (h - h_j)^2}{50 h^2} \\
-            \frac{l_0 \cdot 2(h - h_j)}{2h} &= l_j&\quad V_j &=   \frac{l_0^2 \cdot (h - h_j)^2}{50 h}\\
-            \frac{l_0 \cdot (h - h_j)}{50h} &= l_j
+            V_j &= \Delta h \left( \frac{l_0 \cdot (h - h_j)}{h} \right)^2\\
+            V_j &=   \frac{h \cdot l_0^2 \cdot (h - h_j)^2}{50 h^2} \\
+            V_j &=   \frac{l_0^2 \cdot (h - h_j)^2}{50 h}\\
         \end{align*}
-
+        Cabe señalar que tanto para los volúmenes inscritos y circunscritos la fórmula de $V_j$ funciona para ambos, solo que en la sumatoria de ambos, para el caso de los inscritos se empezará con un j=1 hasta 49.
 
 %Punto 3 del ejercicio 2
     \item Sume los volúmenes que obtuvo en el inciso anterior y explique por qué el volumen de la pirámide del sol debe ser menor que la suma de los volúmenes de los prismas circunscritos y mayor que la suma de los volúmenes de los prismas inscritos.
-  
+     
+    
+        \begin{minipage}[H]{0.45\textwidth}
+            \raggedleft
         \begin{align*}
             \sum_{j=0}^{50} \frac{l_0^2 \cdot (h - h_j)^2}{50h} &= \frac{l_0^2 \cdot }{50h}  \sum_{j=0}^{50}(h - h_j)\\
             &= \frac{l_0^2}{50h}  \sum_{j=0}^{50} \left(h -j \frac{h}{50} \right)^2\\
             &= \frac{l_0^2}{50h}  \sum_{j=0}^{50} \left(\frac{50j-jh}{50} \right)^2\\
             &= \frac{l_0^2}{50h}  \sum_{j=0}^{50} \frac{h^2}{50^2} \left(50-j \right)^2\\
             &= \frac{l_0^2 h^2}{50^3h}  \sum_{j=0}^{50} \left(50-j \right)^2\\
-            &= \frac{l_0^2 h}{50^3}  \sum_{j=0}^{50} \left(50-j \right)^2
+            &= \frac{l_0^2 h}{50^3}  \sum_{j=0}^{50} \left(50-j \right)^2\\
+            &= \frac{l_0^2 h}{50^3} \left(\frac{50(50+1)(2(50)+1)}{6} \right) \\
+            &= \frac{233.48^2 (71.17)}{125,000}(42,925)\\
+            &= \frac {54,512.9104(71.17)(42,925)}{125,000}\\
+            &= \frac {3,879,683.833168(42,925)}{125,000}\\
+            &= \frac {166,535,428,538.7364}{125,000}\\
+            &= 1,332,283.4283098912
         \end{align*}
-  
+        \end{minipage}
+        \hfill
+        \begin{minipage}[H]{0.45\textwidth}
+            \raggedleft
+            \begin{align*}
+            \sum_{j=1}^{49} \frac{l_0^2 \cdot (h - h_j)^2}{50h} &= \frac{l_0^2 \cdot }{50h}  \sum_{j=0}^{50}(h - h_j)\\
+            &= \frac{l_0^2}{50h}  \sum_{j=0}^{50} \left(h -j \frac{h}{50} \right)^2\\
+            &= \frac{l_0^2}{50h}  \sum_{j=0}^{50} \left(\frac{50j-jh}{50} \right)^2\\
+            &= \frac{l_0^2}{50h}  \sum_{j=0}^{50} \frac{h^2}{50^2} \left(50-j \right)^2\\
+            &= \frac{l_0^2 h^2}{50^3h}  \sum_{j=0}^{50} \left(50-j \right)^2\\
+            &= \frac{l_0^2 h}{50^3}  \sum_{j=0}^{50} \left(50-j \right)^2\\
+            &= \frac{l_0^2 h}{50^3} \left(\frac{50(50+1)(2(50)+1)}{6} \right) \\
+            &= \frac{233.48^2 (71.17)}{125,000}(42,925)\\
+            &= \frac {54,512.9104(71.17)(42,925)}{125,000}\\
+            &= \frac {3,879,683.833168(42,925)}{125,000}\\
+            &= \frac {166,535,428,538.7364}{125,000}\\
+            &= 1,332,283.4283098912
+            \end{align*}    
+        \end{minipage}
         
 %Punto 4 del ejercicio 2
-    \item ¿Qué espera que suceda con estas cotas al hacer los mismos cálculos para un número más y más grande?
-\end{enumerate}
+    \item ¿Qué espera que suceda con estas cotas al hacer los mismos cálculos para un número más y más grande?\\
+     {\bf R:} El resultado convergerá al volumen real de la pirámide. 
+   \end{enumerate}
 
 
 \section{Series de potencias}
@@ -261,8 +283,232 @@ La versión en español de la misma enciclopedia informa que la altura de la pir
     
 %Punto 1 del ejercicio 3
         \item Recupere los argumentos vertidos en clase para explicar por qué, si $q \geq 1$, la serie (5) no converge o, dicho de otro modo, diverge a $+\infty$.\\
+            Para $q>1$ los términos $q^k$ crecen sin limite a medida que k aumenta.En este caso, la serie diverge porque los términos no se acercan a cero ni a ningún número en especifico y la suma es infinita.\\
+Es decir, para $q>1$ tenemos que $q^k \rightarrow \infty$ cuando $k\rightarrow \infty$ por lo que $S_n = \sum_{k=1}^{n} q^k \rightarrow \infty$
+    
 
 %Punto 2 del ejercicio 3
-        \item Suponga ahora que $q \leq 0$. ¿Para qué valores de $q$ converge la serie (5)? En su respuesta, considere los siguientes casos:(a) $-1 < q \leq 0$, (b) $q = -1$ y (c)$q < -1$. Para tener una idea, es conveniente experimentar numéricamente en una hoja de cálculo (como se hizo en clase) con distintos valores de $q$ y, luego, buscar un argumento que explique el comportamiento general.
-    \end{enumerate}
+        \item Suponga ahora que $q \leq 0$. ¿Para qué valores de $q$ converge la serie (5)? En su respuesta, considere los siguientes casos:(a) $-1 < q \leq 0$, (b) $q = -1$ y (c)$q < -1$. Para tener una idea, es conveniente experimentar numéricamente en una hoja de cálculo (como se hizo en clase) con distintos valores de $q$ y, luego, buscar un argumento que explique el comportamiento general.\\
+     \\ Para analizar mejor la serie obtendremos la formula de la suma infinita de la serie para apoyarnos a calcular cuando converge \\ 
+    Escribimos la serie 
+    \begin{eqnarray*}
+        S=  q + q^2 + q^3+ q^4+ q^5+ ...
+    \end{eqnarray*}
+    
+    Y multiplicamos cada termino de la serie por q
+    \begin{eqnarray*}
+           q S= q^2 + q^3+ q^4+ q^5+ q^6 ...
+    \end{eqnarray*}
+    Restamos la serie multiplicada de la original\\
+    \begin{eqnarray*}
+   S- qS =  (q + q^2 + q^3+ q^4+ q^5+ ...)& -  (q^2 + q^3+ q^4+ q^5+ q^6 ...)   \\
+         S- qS= q \\
+       S(1-q)=q \\
+       S= \frac{q}{1-q}         
+    \end{eqnarray*}\\
+
+Así obtenemos la formula para obtener para las suma infinita de la serie.\\
+ Observando la serie vemos que si $|q|<1$ va a converger y va a converger a la suma calculada anteriormente, ya que los  términos $q^k$  se acercan a cero conforme a k aumenta.\\
+Observemos este caso y los otros dos:
+
+\begin{itemize}
+    \item $-1< q \leq 0$ \\
+    Realizamos una tabla para analizar como se comporta la suma cuando q se encuentra en este rango:
+          \begin{table} [h]
+            \begin{center}
+                \begin{tabular}{| c | c | c |}\\ \hline
+                    q &     Serie & Suma de la serie  \\ \hline
+                    -0.999 &  $(-.999)^1 + (-.999)^2 + (-.999)^3 +\ldots+(-.999)^n$ &  -0.4997   \\ \hline
+                    -0.99 &  $(-.99)^1 + (-.99)^2 + (-.99)^3 +\ldots+(-.99)^n$ &    -0.4974\\ \hline
+                    -0.9& $(-.9)^1 + (-.9)^2 + (-.9)^3 +\ldots+(-.9)^n$ &  -0.4736    \\ \hline
+                    -0.1 & $(-.1)^1 + (-.1)^2 + (-.1)^3 +\ldots+(-.1)^n$  &  -0.0909  \\ \hline
+                    -0.01& $(-.01)^1 + (-.01)^2 + (-.01)^3 +\ldots+(-.01)^n$ &   -0.0099 \\ \hline
+                    -0.001& $(-.001)^1 + (-.001)^2 + (-.001)^3 +\ldots+(-.001)^n$ &   -0.0009  \\ \hline
+                    -0.0001 & $(-.0001)^1 + (-.0001)^2 + (-.0001)^3 +\ldots+(-.0001)^n$ &  -0.00009   \\ \hline
+                    0 & $(0)^1 + (0)^2 + (0)^3 +\ldots+(0)^n$& 0    \\ \hline
+                \end{tabular}
+
+                \label{tab:datos}
+            \end{center}
+          \end{table}
+Observamos que en cada valor dentro del rango $-1<q\leq 0$ conforme k aumenta el valor de $q^k$ se acerca más a cero y la serie converge.
+
+    
+    
+
+
+    
+    \item $q=-1$\\
+    En la tabla observamos como se comporta la serie con q=1, es decir como se comporta $\sum_{k=1}^{n} (-1)^k $
+    \begin{table} [H]
+    \centering
+\begin{tabular}{| c | c | c |}
+\hline
+q &     Serie & Suma de la serie  \\ \hline
+ -1 & $(-1)^1 + (-1)^2 + (-1)^3 +\ldots+(-1)^n$ = $-1+1-1+1-1+1...$ & Oscila entre 0 y -1  \\ \hline
+\end{tabular}
+\label{tab:datos}
+\end{table}
+La serie en este caso se convierte en una serie alternante que no converge. No converge a un limite finito, porque los términos no se estabilizan en torno a un valor único. En cambio la suma oscila entre 0 y -1.
+
+
+    \item $q<-1$
+\\
+Para este caso tomamos diferentes valores negativos de q para observar el comportamiento de la serie:
+   \begin{table} [H]
+    \centering   
+\begin{tabular}{| c | c | c |}
+\hline
+q &     Serie & Suma de la serie  \\ \hline
+-2 &  $(-2)^1 + (-2)^2 +\ldots+(-2)^n$= $(-2) +4 + (-8) +(16)+ ...$ & \\ 
+ -3 &  $(-3)^1 + (-3)^2 +\ldots+(-3)^n$=    $(-3) +9 + (-27) +(81)+ ...$ &\\ 
+ -4& $(-4)^1 + (-4)^2 +\ldots+(-4)^n =(-4) +16 + (-64) +(256)+ ...$  &  No tienen     \\
+ -5 & $(-5)^1 + (-5)^2 +\ldots+(-5)^n$ = $(-5) +25 + (-125) +(625)+ ...$ &  suma finita   \\ 
+-10 &$(-10)^1 + (-10)^2 +\ldots+(-10)^n$ =$(-10) +100 + (-1000)+ ...$  &    \\ \hline
+\end{tabular}
+
+\label{tab:datos}
+
+\end{table}
+Observamos que cuando $q<-1$ la serie $\sum_{k=1}^{n} (q)^k $ diverge. Los términos de la serie alternan el signo y crecen en magnitud, lo que significa que no se acercan a ningún valor en especifico y la serie no tiene una suma finita.
+    
+\end{itemize}
+\end{enumerate}
+ \section{\large Un balón de futbol americano} 
+ En este ejercicio se trata de calcular aproximadamente el volumen \( V \) de un balón de fútbol americano profesional suponiendo que su superficie se genera rotando, alrededor del eje horizontal, una curva \( y = y(x) \) que satisface que la longitud del eje entre las dos puntas del balón es de 28 cm y la circunferencia de la máxima sección circular transversal al eje mide 53 cm (véase la siguiente figura).\\
+    \includegraphics[width=0.5\textwidth, center]{balon.png}
+
+
+Rebane la mitad derecha del balón en 10 cilindros de grosor \( \Delta x = 1.4 \) cm, de manera que las rebanadas intersecten el eje \( x \) en los valores de la siguiente partición del intervalo \([0, 14]\):
+
+\[
+P = \{x_k \mid x_k = k \Delta x \text{ para } k = 0, \ldots, 10\}
+\]
+
+es decir que:
+
+\[
+x_0 = 0, \quad x_1 = 1.4, \quad x_2 = 2.8, \quad x_3 = 4.2, \quad \ldots, \quad x_9 = 12.6, \quad x_{10} = 14.
+\]
+
+Entonces, si \( V_k \) es el volumen del \( k \)-ésimo cilindro,
+
+\[
+V \approx \sum_{k=1}^{10} V_k
+\]
+\begin{itemize}
+\item Suponga que la curva \( y = y(x) \) es un arco de parábola cuyo vértice coincide con el punto más alto de la máxima sección transversal perpendicular al eje \( x \) y que intersecta al eje horizontal en los puntos \((-14, 0)\) y \((14, 0)\). Entonces:
+
+\begin{enumerate}
+    \item Muestre que la parábola es, aproximadamente, la gráfica de la función
+
+\[
+y(x) = -0.043 x^2 + 8.4352
+\]
+
+definida para \(-14 \leq x \leq 14\).\\
+{\bf R:} Se tiene que la función de una parábola está denotada por:
+
+\[ y(x)=ax^2+bx+c\]
+
+Sabemos que la punto del vértice de la parábola con respecto al origen es $(0, \frac{53}{2\pi)}$ ya que la circunferencia del circulo situado a la mitad del  balón es 53 que se obtiene de la formula de  $P = 2\pi r$. Si sustituimos este valor en la fórmula de la parábola obtenemos $c$:
+
+        \begin{align*}
+            y(0)= \frac{53}{2\pi} &= a(0)^2+b(0)+c\\
+            \frac{53}{2\pi} &= c
+        \end{align*}
+  
+        Si ahora usamos los puntos donde la parábola toca al eje $x$ tendríamos a $a$ y $b$:
+        
+       \begin{align*}
+            y(14)=0&= a(14)^2+b(14)+c &\quad y(-14)=0&= a(-14)^2+b(14)+c\\
+             &= a(14)^2+b(14)+c &\quad &= a(-14)^2+b(-14)+c\\
+            &= 196a+14b+c &\quad &= 196a-14b+c\\ 
+        \end{align*}
+            Si sumamos ambos resultados tenemos:\\
+            
+            \[
+            \begin{array}{c}
+            196a+14b+c\\
+            196a-14b+c\\
+            \hline
+            392a +2c = 0\\
+            \end{array}
+            \]
+        
+        Si despejamos a $a$.
+            
+        \[a=- \frac{c}{196}\]
+        Si queremos obtener a $b$, solo haría falta cambiar los signos a un valor y volverlos a sumar, y después despejar a $b$
+        \[
+        \begin{array}{c}
+            196a+14b+c \\
+            -196a+14b-c\\\hline
+            28b = 0\\
+            b=0
+        \end{array}
+        \]
+    Teniendo ya las literales solo hace falta sustituirlas y desarrollar la ecuación:
+\begin{align*}
+   y(x)&=- \frac{\frac{53}{2\pi}}{196}x^2+\frac{53}{2\pi}\\ 
+   y(x)&=- \frac{53}{392\pi}x^2+8.4352\\
+   y(x)&=- -0.043 x^2+8.4352\\
+\end{align*}
+
+
+
+\item Muestre que la aproximación del volumen con los 10 cilindros circunscritos de grosor \( \Delta x = 1.4 \) cm y radios \( y(x_k) \) cm para \( k = 0, 1, 2, \ldots, 9 \) es:
+
+\[
+V \approx 2 \times 1825.5143 = 3651.0286 \text{ cm}^3
+\]
+
+{\bf R:} 
+\begin{table}{H}
+    \centering
+\begin{tabular}{|c|c|c|c|}\hline
+    $V_k$ &Radio{cm} & Área [$cm^2$] & Volumen[$cm^3$]\\ }\hline
+     0 & 8.4352 & 233.533 & 312.946 \\
+     1 & 8.375 & 220.353 & 308.495 \\
+     2 & 8.3148 & 217.1973 & 304.076\\
+     3 & 8.2546 & 214.0636 & 299.6891\\
+     4 & 8.1944 & 210.9527 & 295.333\\
+     5 & 8.1342 & 207.8646 & 291.0104\\
+     6 & 8.074 & 204.7992 & 286.7189\\
+     7 & 8.0138 & 201.756 & 282.4593\\
+     8 & 7.9536 & 198.7368 & 278.2315\\
+     9 & 7.8934 & 195.7397 & 274.0357\\\hline
+      \multicolumn{2}{|c|}{}Sumatoria & 2932.9968 cm$^3$\\\hline
+\end{tabular}
+\label{tab:CilCirPar}
+\end{table}
+\item Muestre que la aproximación del volumen con los 10 cilindros inscritos de grosor \( \Delta x = 1.4 \) cm y radios \( y(x_k) \) cm para \( k = 1, 2, \ldots, 10 \) es:
+\end{enumerate}
+\[
+V \approx 2 \times 1512.5672 = 3025.1344 \text{ cm}^3
+\]
+
+\item Suponga ahora que la curva \( y = y(x) \) es la mitad superior de una elipse con centro en el origen, semieje horizontal \( a = 14 \) cm (sobre el eje \( x \)) y semieje vertical \( b = \frac{53}{2\pi} \approx 8.4352 \) cm (sobre el eje \( y \)).
+
+\item Muestre que el arco de elipse es, aproximadamente, la gráfica de la función
+
+\[
+y(x) = 0.6025 \sqrt{196 - x^2}
+\]
+
+definida para \(-14 \leq x \leq 14\).
+
+\item Muestre que la aproximación del volumen con los 10 cilindros circunscritos de grosor \( \Delta x = 1.4 \) cm y radios \( y(x_k) \) cm para \( k = 0, 1, 2, \ldots, 9 \) es:
+
+\[
+V \approx 2 \times 2237.4593 = 4474.9186 \text{ cm}^3
+\]
+
+\item Muestre que la aproximación del volumen con los 10 cilindros inscritos de grosor \( \Delta x = 1.4 \) cm y radios \( y(x_k) \) cm para \( k = 1, 2, \ldots, 10 \) es:
+
+\[
+V \approx 2 \times 1924.5279 = 3849.0558 \text{ cm}^3
+\]
+
+    \end{itemize}
 \end{document}
